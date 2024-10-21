@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
-import GraphViewer from "./GraphViewer";
 import { Box, Container, Tab, Tabs } from "@mui/material";
+import React, { useEffect, useState } from "react";
 import { useDropzone } from "react-dropzone";
-import DropZone from "./DropZone";
-import Introduction from "./Introduction";
+import ReactGA from "react-ga4";
 import useFileHandler from "../hooks/useFileHandler";
 import useGraphData from "../hooks/useGraphData";
 import DataTableContainer from "./DataTableContainer";
-import ReactGA from "react-ga4";
+import DropZone from "./DropZone";
+import GraphViewer from "./GraphViewer";
+import Introduction from "./Introduction";
 
 const GraphDataHandler: React.FC = () => {
   const [tabIndex, setTabIndex] = useState(0);
@@ -63,14 +63,14 @@ const GraphDataHandler: React.FC = () => {
     }
   }, [entities]);
 
-  useEffect(() => {
-    const measurementId = process.env.REACT_APP_GA_MEASUREMENT_ID;
-    if (measurementId) {
-      ReactGA.initialize(measurementId);
-    } else {
-      console.error("Google Analytics measurement ID not found");
-    }
-  }, []);
+  // useEffect(() => {
+  //   const measurementId = process.env.REACT_APP_GA_MEASUREMENT_ID;
+  //   if (measurementId) {
+  //     ReactGA.initialize(measurementId);
+  //   } else {
+  //     console.error("Google Analytics measurement ID not found");
+  //   }
+  // }, []);
 
   const onDrop = (acceptedFiles: File[]) => {
     handleFilesRead(acceptedFiles);

@@ -1,21 +1,20 @@
 import React, { useEffect, useState } from "react";
-import ReactGA from "react-ga4";
 
-import GraphDataHandler from "../components/GraphDataHandler";
-import {
-  CssBaseline,
-  Container,
-  Box,
-  createTheme,
-  darkScrollbar,
-  ThemeProvider,
-  IconButton,
-  Tooltip,
-  Link,
-} from "@mui/material";
-import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
+import {
+  Box,
+  Container,
+  createTheme,
+  CssBaseline,
+  darkScrollbar,
+  IconButton,
+  Link,
+  ThemeProvider,
+  Tooltip,
+} from "@mui/material";
+import GraphDataHandler from "../components/GraphDataHandler";
 
 const App: React.FC = () => {
   const [darkMode, setDarkMode] = useState(true);
@@ -58,18 +57,18 @@ const App: React.FC = () => {
     setDarkMode(currentTheme === "dark");
   }, []);
 
-  useEffect(() => {
-    const measurementId = process.env.REACT_APP_GA_MEASUREMENT_ID;
-    if (measurementId) {
-      ReactGA.initialize(measurementId);
-      ReactGA.send({
-        hitType: "pageview",
-        page: window.location.pathname + window.location.search,
-      });
-    } else {
-      console.error("Google Analytics measurement ID not found");
-    }
-  }, []);
+  // useEffect(() => {
+  //   const measurementId = process.env.REACT_APP_GA_MEASUREMENT_ID;
+  //   if (measurementId) {
+  //     ReactGA.initialize(measurementId);
+  //     ReactGA.send({
+  //       hitType: "pageview",
+  //       page: window.location.pathname + window.location.search,
+  //     });
+  //   } else {
+  //     console.error("Google Analytics measurement ID not found");
+  //   }
+  // }, []);
 
   return (
     <ThemeProvider theme={theme}>
@@ -91,7 +90,7 @@ const App: React.FC = () => {
         >
           <IconButton
             component={Link}
-            href="https://github.com/noworneverev/graphrag-visualizer"
+            href="https://github.com/huqianghui/graphrag-visualizer"
             target="_blank"
             rel="noopener"
             color="inherit"

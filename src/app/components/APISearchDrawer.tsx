@@ -1,29 +1,29 @@
-import React, { useEffect, useState } from "react";
+import CloseIcon from "@mui/icons-material/Close";
+import ExpandLessIcon from "@mui/icons-material/ExpandLess";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import {
+  Alert,
   Box,
   Button,
-  CircularProgress,
-  Drawer,
-  TextField,
-  Typography,
   Card,
   CardContent,
   CardHeader,
+  CircularProgress,
+  Collapse,
+  Drawer,
+  IconButton,
+  Link,
+  Paper,
   Table,
   TableBody,
   TableCell,
   TableContainer,
   TableHead,
   TableRow,
-  Paper,
-  IconButton,
-  Collapse,
-  Link,
-  Alert,
+  TextField,
+  Typography,
 } from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import ExpandLessIcon from "@mui/icons-material/ExpandLess";
+import React, { useEffect, useState } from "react";
 import { SearchResult } from "../models/search-result";
 
 interface APISearchDrawerProps {
@@ -162,7 +162,7 @@ const APISearchDrawer: React.FC<APISearchDrawerProps> = ({
               Server is not running. Please start the server to use the API.
               Follow the instructions at{" "}
               <Link
-                href="https://github.com/noworneverev/graphrag-api"
+                href="https://github.com/huqianghui/graphrag-api"
                 target="_blank"
                 rel="noopener noreferrer"
               >
